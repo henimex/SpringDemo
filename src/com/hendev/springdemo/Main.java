@@ -9,7 +9,10 @@ public class Main {
 		System.out.println("After XML File");
 		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(IocConfig.class);
 		//context.refresh(); //prevents context switching errors
-		ICustomerDal customer = context.getBean("database",ICustomerDal.class);
+		
+		//ICustomerDal customer = context.getBean("database",ICustomerDal.class);
+		
+		ICustomerService customer = context.getBean("service",ICustomerService.class);
 		
 		customer.add();
 	}
